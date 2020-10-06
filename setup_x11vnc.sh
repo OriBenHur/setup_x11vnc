@@ -92,7 +92,7 @@ function setup(){
 	sudo systemctl enable stop_x11vnc
 	sudo systemctl stop stop_x11vnc
 	sudo systemctl start x11vnc-desktop
-	rm /tmp/x11vnc.lock -rf
+	sudo rm /tmp/x11vnc.lock -rf
 }
 
 install_vnc
