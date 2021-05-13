@@ -62,8 +62,7 @@ function create_vnc_files() {
 			[Service]
 			Type=simple
 			User=${GUID}
-
-			ExecStart=/usr/bin/x11vnc -auth /run/user/${GUID}/gdm/Xauthority -loop -forever -bg -rfbport 5900 -xkb -noxrecord -noxfixes -noxdamage -shared -norc -rfbauth /etc/x11vnc.pass -find
+      ExecStart=/usr/bin/x11vnc -display "${DISPLAY}" -loop -forever -bg -rfbport 5900 -xkb -noxrecord -noxfixes -noxdamage -shared -norc -auth /run/user/${GUID}/gdm/Xauthority -rfbauth /etc/x11vnc.pass
 			ExecStop=/bin/bash -c 'killall -9 x11vnc'
 
 
